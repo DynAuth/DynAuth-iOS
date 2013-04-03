@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0E7B4849170BE83300D4B22B /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E7B4848170BE83300D4B22B /* CoreLocation.framework */; };
 		0EAEF74A16BB006E001AE666 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0EAEF74916BB006E001AE666 /* UIKit.framework */; };
 		0EAEF74C16BB006E001AE666 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0EAEF74B16BB006E001AE666 /* Foundation.framework */; };
 		0EAEF74E16BB006E001AE666 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0EAEF74D16BB006E001AE666 /* CoreGraphics.framework */; };
@@ -24,6 +25,7 @@
 		0EAEF77316BB006E001AE666 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0EAEF74B16BB006E001AE666 /* Foundation.framework */; };
 		0EAEF77B16BB006E001AE666 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0EAEF77916BB006E001AE666 /* InfoPlist.strings */; };
 		0EAEF77E16BB006E001AE666 /* GeoAuthTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EAEF77D16BB006E001AE666 /* GeoAuthTests.m */; };
+		FA2E9EF28CE04E9BBBB304B7 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D8DF2B3A58049EFA9C00232 /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,6 +39,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0E7B4848170BE83300D4B22B /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		0EAEF74616BB006E001AE666 /* GeoAuth.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GeoAuth.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0EAEF74916BB006E001AE666 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		0EAEF74B16BB006E001AE666 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -60,6 +63,8 @@
 		0EAEF77A16BB006E001AE666 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		0EAEF77C16BB006E001AE666 /* GeoAuthTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GeoAuthTests.h; sourceTree = "<group>"; };
 		0EAEF77D16BB006E001AE666 /* GeoAuthTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GeoAuthTests.m; sourceTree = "<group>"; };
+		3D8DF2B3A58049EFA9C00232 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		F6406600FC7D46F2A7B98460 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,9 +72,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0E7B4849170BE83300D4B22B /* CoreLocation.framework in Frameworks */,
 				0EAEF74A16BB006E001AE666 /* UIKit.framework in Frameworks */,
 				0EAEF74C16BB006E001AE666 /* Foundation.framework in Frameworks */,
 				0EAEF74E16BB006E001AE666 /* CoreGraphics.framework in Frameworks */,
+				FA2E9EF28CE04E9BBBB304B7 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -89,10 +96,12 @@
 		0EAEF73D16BB006E001AE666 = {
 			isa = PBXGroup;
 			children = (
+				0E7B4848170BE83300D4B22B /* CoreLocation.framework */,
 				0EAEF74F16BB006E001AE666 /* GeoAuth */,
 				0EAEF77616BB006E001AE666 /* GeoAuthTests */,
 				0EAEF74816BB006E001AE666 /* Frameworks */,
 				0EAEF74716BB006E001AE666 /* Products */,
+				F6406600FC7D46F2A7B98460 /* Pods.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -112,6 +121,7 @@
 				0EAEF74B16BB006E001AE666 /* Foundation.framework */,
 				0EAEF74D16BB006E001AE666 /* CoreGraphics.framework */,
 				0EAEF77016BB006E001AE666 /* SenTestingKit.framework */,
+				3D8DF2B3A58049EFA9C00232 /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -173,6 +183,7 @@
 				0EAEF74216BB006E001AE666 /* Sources */,
 				0EAEF74316BB006E001AE666 /* Frameworks */,
 				0EAEF74416BB006E001AE666 /* Resources */,
+				E8FC6A043919406F8AD82796 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -266,6 +277,20 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+		E8FC6A043919406F8AD82796 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -394,6 +419,7 @@
 		};
 		0EAEF78216BB006E001AE666 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F6406600FC7D46F2A7B98460 /* Pods.xcconfig */;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "GeoAuth/GeoAuth-Prefix.pch";
@@ -405,6 +431,7 @@
 		};
 		0EAEF78316BB006E001AE666 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F6406600FC7D46F2A7B98460 /* Pods.xcconfig */;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "GeoAuth/GeoAuth-Prefix.pch";
@@ -467,6 +494,7 @@
 				0EAEF78316BB006E001AE666 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0EAEF78416BB006E001AE666 /* Build configuration list for PBXNativeTarget "GeoAuthTests" */ = {
 			isa = XCConfigurationList;
@@ -475,6 +503,7 @@
 				0EAEF78616BB006E001AE666 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

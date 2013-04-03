@@ -10,8 +10,19 @@
 
 @implementation AppDelegate
 
+@synthesize networkEngine;
+@synthesize locationManager;
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    locationManager = [[CLLocationManager alloc] init];
+    locationManager.desiredAccuracy = kCLLocationAccuracyBest;
+    locationManager.distanceFilter = 100;
+    locationManager.delegate = self;
+    [locationManager startUpdatingLocation];
+    
+    networkEngine = [[MKNetworkEngine alloc] initWithHostName:@"cs5221.oko.io:8000"];
+    
     // Override point for customization after application launch.
     return YES;
 }
@@ -41,6 +52,32 @@
 - (void)applicationWillTerminate:(UIApplication *)application
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+- (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations
+{
+    CLLocation* location = [locations lastObject];
+    NSLog(@"latitude %+.6f, longitude %+.6f\n",
+          location.coordinate.latitude,
+          location.coordinate.longitude);
+    
+    NSString *lat = [[NSString alloc] initWithFormat:@"%+.6f", location.coordinate.latitude];
+    NSString *lon = [[NSString alloc] initWithFormat:@"%+.6f", location.coordinate.longitude];
+    NSDateFormatter *df = [[NSDateFormatter alloc] init];
+    [df setDateFormat:@"yyyy.MM.dd HH:mm:ss"];
+    NSString *time = [df stringFromDate:location.timestamp];
+    
+    
+    NSMutableDictionary* md = [[NSMutableDictionary alloc] init];
+    NSString *dev_id = [[NSUserDefaults standardUserDefaults] stringForKey:@"GEOAUTH_DEVICE_ID"];
+    if([dev_id length] == 0) dev_id = @"852d106e102342c2911455998cf7e637";
+    [md setValue:dev_id forKey:@"device_id"];
+    [md setValue:lat forKey:@"latitude"];
+    [md setValue:lon forKey:@"longitude"];
+    [md setValue:time forKey:@"time"];
+    
+    MKNetworkOperation* op = [networkEngine operationWithPath:@"api/device/check-in" params:md httpMethod:@"POST"];
+    [networkEngine enqueueOperation:op];
 }
 
 @end

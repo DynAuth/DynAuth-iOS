@@ -7,7 +7,17 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <MKNetworkEngine.h>
+#import <MKNetworkOperation.h>
 
 @interface ViewController : UIViewController
+
+- (IBAction)sendUpdate:(id)sender;
+@property (weak, nonatomic) IBOutlet UITextField *deviceKey;
+@property (weak, nonatomic) IBOutlet UITextField *deviceName;
+- (IBAction)registerDevice:(id)sender;
+@property (weak, nonatomic) IBOutlet UILabel *notifier;
+
+@property (strong, nonatomic) MKNetworkEngine *networkEngine;
 
 @end
